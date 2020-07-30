@@ -1,0 +1,59 @@
+<!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+<%
+    var cover = item.cover || theme.index_cover;
+%>
+<header class="intro-header" style="background-image: url('<%- url_for(cover) %>')">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9">
+                <div class="post-heading">
+                    <h1><%- item.title %></h1>
+                    <% if (item.subtitle && item.subtitle.length) { %>
+                    <h2 class="post-subheading">
+                        <%- item.subtitle %>
+                    </h2>
+                    <% } %>
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        <% if(item.author) { %>
+                            By <%- item.author %> on
+                        <% } %>
+                        <%= item.date.format(config.date_format) %>
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+            <!-- Gallery -->
+            <% if (item.photos && item.photos.length){ %>
+                <%- partial('gallery') %>
+            <% } %>
+            <!-- Post Main Content -->
+            <div class="col-md-9">
+                <%- item.content %>
+                <% if (item.comment != false) { %>
+                    <%- partial("_partial/comments.ejs") %>
+                <% } %>
+            </div>
+            <div class="col-md-3">
+                <h2> Also Read </h2>
+                <hr>
+                <% list_related_posts({maxCount: 3}).forEach(function(related_item){ %>
+                    <%- partial("_partial/article-archive.ejs", {item: related_item})%>
+                <% }); %>
+                <hr>
+                <% if (item.tags && item.tags.length){ %>
+                    <%- partial('article-tags', {item: item}) %>
+                <% } %>
+            </div>
+        </div>
+    </div>
+</article>
+

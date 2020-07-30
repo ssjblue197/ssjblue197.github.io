@@ -1,0 +1,43 @@
+{
+  "name": "mlx",
+  "version": "0.0.1",
+  "private": true,
+  "hexo": {
+    "version": "3.3.9"
+  },
+  "engines": {
+    "node": "8.5.0",
+    "npm": "5.3.0"
+  },
+  "dependencies": {
+    "hexo": "^3.2.0",
+    "hexo-deployer-git": "^0.2.0",
+    "hexo-fs": "^0.1.6",
+    "hexo-generator-archive": "^0.1.4",
+    "hexo-generator-category": "^0.1.3",
+    "hexo-generator-index": "^0.2.0",
+    "hexo-generator-tag": "^0.2.0",
+    "hexo-image-caption": "^0.1.1",
+    "hexo-renderer-ejs": "^0.2.0",
+    "hexo-renderer-marked": "^0.2.10",
+    "hexo-renderer-stylus": "^0.3.1",
+    "hexo-server": "^0.2.0",
+    "hexo-soundcloud": "^0.2.0"
+  },
+  "description": "getdata",
+  "main": "index.js",
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rajpurkar/mlx.git"
+  },
+  "author": "mypt",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rajpurkar/mlx/issues"
+  },
+  "homepage": "https://github.com/rajpurkar/mlx#readme"
+}

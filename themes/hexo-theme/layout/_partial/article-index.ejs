@@ -1,0 +1,23 @@
+<div class="post-preview">
+    <a href="<%- config.root %><%- item.path %>">
+        <h2 class="post-title">
+            <%- item.title %>
+        </h2>
+        <% if (item.subtitle && item.subtitle.length) { %>
+            <h3 class="post-subtitle">
+                <%- item.subtitle %>
+            </h3>
+        <% } %>
+    </a>
+    <p class="post-meta">
+        <!-- Date and Author -->
+        <% if(item.author) { %>
+            By <%- item.author %> on
+        <% } %>
+        <%= item.date.format(config.date_format) %>
+        <% if (item.tags && item.tags.length){ %>
+            <%- partial('article-tags', {item: item}) %>
+    <% } %>
+    </p>
+</div>
+<hr>
